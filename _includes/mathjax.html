@@ -1,0 +1,36 @@
+<!--
+Reference: https://gist.github.com/darrowby385/1e52cfea4bc4d0c7e35b4e64aa61e37f
+
+This snippet should convince kramdown to play nice with MathJax 3.
+Ideal for enabling MathJax as part of a Jekyll site hosted with GitHub Pages.
+
+The script implements the advice of these two articles in tandem:
+http://docs.mathjax.org/en/latest/upgrading/v2.html#changes-in-the-mathjax-api
+http://docs.mathjax.org/en/latest/web/configuration.html#configuration-using-an-in-line-script
+-->
+
+<script>
+  MathJax = {
+    options: {
+      renderActions: {
+        findScript: [10, function (doc) {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/);
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+            const text = document.createTextNode('');
+            node.parentNode.replaceChild(text, node);
+            math.start = {node: text, delim: '', n: 0};
+            math.end = {node: text, delim: '', n: 0};
+            doc.math.push(math);
+          }
+        }, '']
+      }
+    },
+    tex: {
+     inlineMath: [['$', '$'], ['\\(', '\\)']],
+    },
+  };
+</script>
+
+<script type="text/javascript" id="MathJax-script" async  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
