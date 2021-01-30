@@ -23,8 +23,16 @@ Code at [ssqueezepy](https://github.com/OverLordGoldDragon/ssqueezepy/blob/maste
 
 Compare Generalized Morse Wavelets with `beta=5` (high time localization) vs `beta=22` (high frequency localization), `gamma=3` for both (optimal join localization).
 
-<img src="https://user-images.githubusercontent.com/16495490/106352592-d4b7df00-62fd-11eb-8ccc-21d456541751.png">
+See sections 4.4.1 & 4.4.2 in [Wavelet Tour](https://www.di.ens.fr/~mallat/papiers/WaveletTourChap1-2-3.pdf) comparing CWT vs STFT time-frequency localization via ridge analysis.
 
+<img src="https://user-images.githubusercontent.com/16495490/106354668-ef458480-630c-11eb-8eb8-f6699968920e.png">
+
+
+### CWT vs STFT
+
+Generalized Morse Wavelet (GMW) vs Discrete Prolate Spheroidal Sequence (DPSS) window, configured to have ~equal time & frequency resolutions.
+
+<img src="https://user-images.githubusercontent.com/16495490/106355140-99bea700-630f-11eb-90fa-baf74332b7b5.png">
 
 ### Signal general forms derivations
 
