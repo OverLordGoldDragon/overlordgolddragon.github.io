@@ -161,8 +161,8 @@ Psi = coeff * psizero * L
 ```
 
 Note that `sqrt(f0/f)` is absent in Eq 10 of ref 1 (L2 norm case). Its inclusion 
-normalizes the time-domain wavelet's energy to unity. Except scales (`sqrt(1/f)`), 
-this seems to have been a neglected quantity.
+normalizes the time-domain wavelet's energy to unity, and the complete expression
+is given in CWT examples as `sqrt(scale) * psih`.
 
 <hr>
 
