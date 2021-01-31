@@ -17,7 +17,7 @@ wavelet or transform can excel at accurately mapping all.
 
 Code at [ssqueezepy](https://github.com/OverLordGoldDragon/ssqueezepy/blob/master/examples/test_transforms.py).
 
-<img src="https://user-images.githubusercontent.com/16495490/106352545-84d91800-62fd-11eb-900e-4703178a5246.png">
+<img src="https://user-images.githubusercontent.com/16495490/106389827-e7fea380-63fe-11eb-9c0b-64061bc114db.png">
 
 ### Wavelets vs test signals; CWT
 
@@ -25,14 +25,14 @@ Compare Generalized Morse Wavelets with `beta=5` (high time localization) vs `be
 
 See sections 4.4.1 & 4.4.2 in [Wavelet Tour](https://www.di.ens.fr/~mallat/papiers/WaveletTourChap1-2-3.pdf) comparing CWT vs STFT time-frequency localization via ridge analysis.
 
-<img src="https://user-images.githubusercontent.com/16495490/106354668-ef458480-630c-11eb-8eb8-f6699968920e.png">
+<img src="https://user-images.githubusercontent.com/16495490/106389736-60189980-63fe-11eb-8a18-ae731bf5a7b5.png">
 
 
 ### CWT vs STFT
 
 Generalized Morse Wavelet (GMW) vs Discrete Prolate Spheroidal Sequence (DPSS) window, configured to have ~equal time & frequency resolutions.
 
-<img src="https://user-images.githubusercontent.com/16495490/106355140-99bea700-630f-11eb-90fa-baf74332b7b5.png">
+<img src="https://user-images.githubusercontent.com/16495490/106389720-411a0780-63fe-11eb-97df-bd746b73cbe8.png">
 
 ### Signal general forms derivations
 
