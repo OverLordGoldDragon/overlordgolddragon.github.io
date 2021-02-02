@@ -17,7 +17,7 @@ wavelet or transform can excel at accurately mapping all.
 
 Code at [ssqueezepy](https://github.com/OverLordGoldDragon/ssqueezepy/blob/master/examples/test_transforms.py).
 
-<img src="https://user-images.githubusercontent.com/16495490/106389827-e7fea380-63fe-11eb-9c0b-64061bc114db.png">
+<img src="https://user-images.githubusercontent.com/16495490/106623036-a51f0600-658d-11eb-91b9-e145d6e75f21.png">
 
 ### Wavelets vs test signals; CWT
 
@@ -25,14 +25,14 @@ Compare Generalized Morse Wavelets with `beta=5` (high time localization) vs `be
 
 See sections 4.4.1 & 4.4.2 in [Wavelet Tour](https://www.di.ens.fr/~mallat/papiers/WaveletTourChap1-2-3.pdf) comparing CWT vs STFT time-frequency localization via ridge analysis.
 
-<img src="https://user-images.githubusercontent.com/16495490/106389736-60189980-63fe-11eb-8a18-ae731bf5a7b5.png">
+<img src="https://user-images.githubusercontent.com/16495490/106622975-959fbd00-658d-11eb-92d4-d5461dd9f5be.png">
 
 
 ### CWT vs STFT
 
 Generalized Morse Wavelet (GMW) vs Discrete Prolate Spheroidal Sequence (DPSS) window, configured to have ~equal time & frequency resolutions.
 
-<img src="https://user-images.githubusercontent.com/16495490/106389720-411a0780-63fe-11eb-97df-bd746b73cbe8.png">
+<img src="https://user-images.githubusercontent.com/16495490/106622840-743ed100-658d-11eb-8302-dfdc5d845b68.png">
 
 ### Signal general forms derivations
 
@@ -93,6 +93,39 @@ phi(t) = [(m/2)*t^2 + (fmin - m*tmin)*t]_{tmin}^{t}
        = [(m/2)*t^2 + (fmin - m*tmin)*t] -
          [(m/2)*tmin^2 + (fmin - m*tmin)*tmin]
        = (m/2)*(t^2 - tmin^2) + (fmin - m*tmin)*(t - tmin)
+
+
+---- **echirp** --------------------------------------------------------------
+Design EFM to range from `(tmin, fmin)` to `(tmax, fmax)`, such that 
+f(t2) / f(t1) = const. forall t2, t1.
+
+Choose form: f(t) = a*b^t --> phi(t) = A*B^t + C
+This ensures the required ratio.
+
+>> (tmin, fmin)
+f(tmin) = a*b^tmin = fmin
+-> b = (fmin/a)^(1/tmin)
+
+>> (tmax, fmax)
+f(tmax) = a*b^tmax = fmax
+-> b = (fmax/a)^(1/tmax)
+
+-> (fmin/a)^(1/tmin) = (fmax/a)^(1/tmax)
+-> A=1/tmin, B=1/tmax
+-> (fmin/a)^A = (fmax/a)^B
+-> a^B / a^A = fmax^B / fmin^A
+-> a^(B-A) = fmax^B / fmin^A
+-> a = (fmax^B / fmin^A) ^ 1/(B-A)
+     = fmax^(tmin/(tmin - tmax)) / fmin^(tmax/(tmin - tmax))
+-> a = (fmin^tmax / fmax^tmin) ^ 1/(tmax - tmin)
+
+-> b = (fmax/a)^(1/tmax)
+     = fmax^(1/tmax) * (1/a)^(1/tmax)
+-> b = fmax^(1/tmax) * (fmin^tmax / fmax^tmin) ^ (1/(tmin*tmax - tmax^2))
+
+-> phi(t) = int_{tmin}^{t} a*b^t dt
+          = (a/ln(b)) * (b^t - b^tmin)
+
 
 
 ---- **echirp** --------------------------------------------------------------
