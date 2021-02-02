@@ -17,7 +17,7 @@ wavelet or transform can excel at accurately mapping all.
 
 Code at [ssqueezepy](https://github.com/OverLordGoldDragon/ssqueezepy/blob/master/examples/test_transforms.py).
 
-<img src="https://user-images.githubusercontent.com/16495490/106623036-a51f0600-658d-11eb-91b9-e145d6e75f21.png">
+<img src="https://user-images.githubusercontent.com/16495490/106642579-f933e580-65a1-11eb-816f-486d15a557a3.png">
 
 ### Wavelets vs test signals; CWT
 
