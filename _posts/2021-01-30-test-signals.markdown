@@ -17,22 +17,31 @@ wavelet or transform can excel at accurately mapping all.
 
 Code at [ssqueezepy](https://github.com/OverLordGoldDragon/ssqueezepy/blob/master/examples/test_transforms.py).
 
-<img src="https://user-images.githubusercontent.com/16495490/107446340-ac2eb100-6b57-11eb-8889-e8039e8cf008.png">
-
-### Wavelets vs test signals; CWT
-
-Compare Generalized Morse Wavelets with `beta=5` (high time localization) vs `beta=22` (high frequency localization), `gamma=3` for both (optimal join localization).
-
-See sections 4.4.1 & 4.4.2 in [Wavelet Tour](https://www.di.ens.fr/~mallat/papiers/WaveletTourChap1-2-3.pdf) comparing CWT vs STFT time-frequency localization via ridge analysis.
-
-<img src="https://user-images.githubusercontent.com/16495490/106622975-959fbd00-658d-11eb-92d4-d5461dd9f5be.png">
+<img src="https://user-images.githubusercontent.com/16495490/108463034-18678e00-7297-11eb-810f-886d8ec5cc60.png">
 
 
 ### CWT vs STFT
 
 Generalized Morse Wavelet (GMW) vs Discrete Prolate Spheroidal Sequence (DPSS) window, configured to have ~equal time & frequency resolutions.
 
-<img src="https://user-images.githubusercontent.com/16495490/106622840-743ed100-658d-11eb-8302-dfdc5d845b68.png">
+<img src="https://user-images.githubusercontent.com/16495490/108462604-51533300-7296-11eb-8f88-d282beccd3a6.png">
+
+
+### Wavelets vs test signals; CWT
+
+Compare Generalized Morse Wavelets with `beta=5` (high time localization) vs `beta=60` (high frequency localization), `gamma=3` for both (optimal joint localization).
+
+See sections 4.4.1 & 4.4.2 in [Wavelet Tour](https://www.di.ens.fr/~mallat/papiers/WaveletTourChap1-2-3.pdf) comparing CWT vs STFT time-frequency localization via ridge analysis.
+
+<img src="https://user-images.githubusercontent.com/16495490/108462580-44364400-7296-11eb-8ea2-7ccb815dc8e5.png">
+
+
+### Noisy example
+
+Add noise of set SNR (dB) with e.g. `TestSignals(snr=-2)`.
+
+<img src="https://user-images.githubusercontent.com/16495490/108463190-6381a100-7297-11eb-8b54-91dc4cb30b9a.png">
+
 
 ### Signal general forms derivations
 
