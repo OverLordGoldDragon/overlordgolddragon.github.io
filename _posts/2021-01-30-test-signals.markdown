@@ -17,14 +17,14 @@ wavelet or transform can excel at accurately mapping all.
 
 Code at [ssqueezepy](https://github.com/OverLordGoldDragon/ssqueezepy/blob/master/examples/test_transforms.py).
 
-<img src="https://user-images.githubusercontent.com/16495490/108463034-18678e00-7297-11eb-810f-886d8ec5cc60.png">
+<img src="https://user-images.githubusercontent.com/16495490/108497828-7b701980-72c5-11eb-9946-02bf292055e2.png">
 
 
 ### CWT vs STFT
 
 Generalized Morse Wavelet (GMW) vs Discrete Prolate Spheroidal Sequence (DPSS) window, configured to have ~equal time & frequency resolutions.
 
-<img src="https://user-images.githubusercontent.com/16495490/108462604-51533300-7296-11eb-8f88-d282beccd3a6.png">
+<img src="https://user-images.githubusercontent.com/16495490/108497784-6c896700-72c5-11eb-9689-26c711a76a98.png">
 
 
 ### Wavelets vs test signals; CWT
@@ -33,14 +33,21 @@ Compare Generalized Morse Wavelets with `beta=5` (high time localization) vs `be
 
 See sections 4.4.1 & 4.4.2 in [Wavelet Tour](https://www.di.ens.fr/~mallat/papiers/WaveletTourChap1-2-3.pdf) comparing CWT vs STFT time-frequency localization via ridge analysis.
 
-<img src="https://user-images.githubusercontent.com/16495490/108462580-44364400-7296-11eb-8ea2-7ccb815dc8e5.png">
+<img src="https://user-images.githubusercontent.com/16495490/108497732-58456a00-72c5-11eb-9cb7-988c07c4bfd9.png">
 
 
 ### Noisy example
 
-Add noise of set SNR (dB) with e.g. `TestSignals(snr=-2)`.
+Add noise of set SNR (dB) with e.g. `TestSignals(.., snr=-2)`.
 
 <img src="https://user-images.githubusercontent.com/16495490/108463190-6381a100-7297-11eb-8b54-91dc4cb30b9a.png">
+
+
+### Ridge extraction
+
+`TestSignals().ridgecomp(.., n_ridges=3, transform='stft')`
+
+<img src="https://user-images.githubusercontent.com/16495490/108498678-a5760b80-72c6-11eb-92d7-68258dca826a.png">
 
 
 ### Signal general forms derivations
